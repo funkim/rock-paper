@@ -1,13 +1,17 @@
 
 const Hand = ['Rock','Paper','Scissors']
-const computerSelection = getComputerChoice();
 
-function playRound(playerSelection, computerSelection){
-    let playerSelection = document.querySelector('input[type=text]').value
+function playRound(){
+    const computerSelection = getComputerChoice();
     function getComputerChoice() {
     const randomElement = Hand[Math.floor(Math.random() * Hand.length)]
     return randomElement;
-}
+    }
+    computerSelection;
+    const win = `You Won! They Chose ${computerSelection}.`
+    const lose = `You lost =( They Chose ${computerSelection}.`
+    const tie = `It was a tie! They also chose ${computerSelection}.`
+    let playerSelection = document.querySelector('input[type=text]').value
     switch (playerSelection) {
     case "Scissors":
         if  (computerSelection === 'Rock' ) {
@@ -48,6 +52,3 @@ function getComputerChoice() {
     const randomElement = Hand[Math.floor(Math.random() * Hand.length)]
     return randomElement;
 }
-const win = `You Won! They Chose ${computerSelection}.`
-const lose = `You lost =( They Chose ${computerSelection}.`
-const tie = `It was a tie! They also chose ${computerSelection}.`
