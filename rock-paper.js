@@ -1,4 +1,3 @@
-
 const Hand = ['Rock','Paper','Scissors']
 
 function playRound(){
@@ -8,23 +7,24 @@ function playRound(){
     return randomElement;
     }
     computerSelection;
+    let playerSelection = document.querySelector('input[type=text]').value;
+    playerSelection.toLowerCase();
     const win = `You Won! They Chose ${computerSelection}.`
     const lose = `You lost =( They Chose ${computerSelection}.`
     const tie = `It was a tie! They also chose ${computerSelection}.`
-    let playerSelection = document.querySelector('input[type=text]').value
     switch (playerSelection) {
-    case "Scissors":
+    case "scissors":
         if  (computerSelection === 'Rock' ) {
             showdown = lose;
         }
         else if (computerSelection === 'Paper') {
-                showdown = win;
+        showdown = win;
         }
         else {
             showdown = tie
         }
         break;
-    case "Rock":
+    case "rock":
         if (computerSelection === 'Rock') {
             showdown = tie;
         }
@@ -35,7 +35,7 @@ function playRound(){
             showdown = win
         }
         break;
-    case "Paper":
+    case "paper":
         if (computerSelection === 'Rock') {
             showdown = win;
         }
