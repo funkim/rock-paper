@@ -8,7 +8,7 @@ function playRound(){
     }
     computerSelection;
     let playerSelection = document.querySelector('input[type=text]').value;
-    playerSelection.toLowerCase();
+    playerSelection = playerSelection.toLowerCase();
     const win = `You Won! They Chose ${computerSelection}.`
     const lose = `You lost =( They Chose ${computerSelection}.`
     const tie = `It was a tie! They also chose ${computerSelection}.`
