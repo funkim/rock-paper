@@ -1,18 +1,18 @@
-const Hand = ['Rock','Paper','Scissors']
-function game() {
-function playRound(){
-    const computerSelection = getComputerChoice();
-    function getComputerChoice() {
-    const randomElement = Hand[Math.floor(Math.random() * Hand.length)]
-    return randomElement;
+const hand = ['Rock','Paper' ,'Scissors'];
+function playRound() {
+let   win = `You Won! They Chose ${computerSelection}.`
+let   lose = `You lost =( They Chose ${computerSelection}.`
+let   tie = `It was a tie! They also chose ${computerSelection}.`
+let showdown = 'The Result is...'
+    function computerSelection() {
+        const randomElement = hand[Math.floor(Math.random() * hand.length)]
+        return randomElement;
     }
-    computerSelection;
-    let playerSelection = document.querySelector('input[type=text]').value;
-    playerSelection = playerSelection.toLowerCase();
-    const win = `You Won! They Chose ${computerSelection}.`
-    const lose = `You lost =( They Chose ${computerSelection}.`
-    const tie = `It was a tie! They also chose ${computerSelection}.`
-    switch (playerSelection) {
+    function playerSelection() {
+        document.querySelector('input[type=text]').value;
+        return value.toLowerCase();
+    }
+    switch (playerSelection()) {
     case "scissors":
         if  (computerSelection === 'Rock' ) {
             showdown = lose;
@@ -45,11 +45,10 @@ function playRound(){
         else {
             showdown = lose; 
         }
+        break;
+            default:
+                showdown = "THATS NOT A ANSWER!!!!!"
+        break;
     } 
     document.getElementById("result").innerHTML = showdown;
-}
-function getComputerChoice() {
-    const randomElement = Hand[Math.floor(Math.random() * Hand.length)]
-    return randomElement;
-}
 }
