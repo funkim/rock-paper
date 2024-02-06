@@ -4,16 +4,14 @@ let computerScore = 0;
 function playerSelection() {
         document.querySelectorAll(`.playerChoice`).forEach(button => {
         button.addEventListener("click", (e) => {
-        const playerChoice = e.target.getAttribute(`id`);
-        game(playerChoice);
-        console.log(`Player: ${playerChoice}, Computer: ${computerChoice}`);
+        const playerChoice = e.currentTarget.getAttribute(`id`);
+        const roundResult = playRound(playerChoice);
+        game(roundResult);
         })
     });
 }
 
-function game() {
-    if (playerScore < 5 && computerScore < 5) {
-        const roundResult = playRound(playerChoice);
+function game(roundResult) {
         if (roundResult === 'win') {
             playerScore++;
         } else if (roundResult === 'lose') {
@@ -25,14 +23,14 @@ function game() {
     document.getElementById("winner").innerHTML = winner;
     }
 }
-}
+
 
     function computerSelector() {
         const randomChoice = hand[Math.floor(Math.random() * hand.length)]
         return randomChoice;
     }
 
-function playRound() {
+function playRound(playerChoice) {
         const computerChoice = computerSelector();
     if (playerChoice === computerChoice) {
         return 'tie';
@@ -47,7 +45,8 @@ function playRound() {
     }
 }
 
-button.addEventListener("click", (e) =>{
-    playerSelection()
-    playRound(playerChoice)
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    playerSelection();
 });
+
