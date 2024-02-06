@@ -1,8 +1,17 @@
 const hand = ['Rock','Paper' ,'Scissors'];
 let playerScore = 0;
 let computerScore = 0;
+function playerSelection() {
+        document.querySelectorAll(`.playerChoice`).forEach(button => {
+        button.addEventListener("click", (e) => {
+        const playerChoice = e.target.getAttribute(`id`);
+        game(playerChoice);
+        console.log(`Player: ${playerChoice}, Computer: ${computerChoice}`);
+        })
+    });
+}
 
-function game(playerChoice) {
+function game() {
     if (playerScore < 5 && computerScore < 5) {
         const roundResult = playRound(playerChoice);
         if (roundResult === 'win') {
@@ -17,23 +26,13 @@ function game(playerChoice) {
     }
 }
 }
-function playerSelection() {
-        document.querySelectorAll(`.playerChoice`).forEach(button => {
-        button.addEventListener("click", (event) => {
-        const playerChoice = event.target.id;
-        game(playerChoice);
-        console.log(`Player: ${playerChoice}, Computer: ${computerChoice}`);
-        })
-    });
-}
-
 
     function computerSelector() {
         const randomChoice = hand[Math.floor(Math.random() * hand.length)]
         return randomChoice;
     }
 
-function playRound(playerChoice) {
+function playRound() {
         const computerChoice = computerSelector();
     if (playerChoice === computerChoice) {
         return 'tie';
@@ -48,3 +47,7 @@ function playRound(playerChoice) {
     }
 }
 
+button.addEventListener("click", (e) =>{
+    playerSelection()
+    playRound(playerChoice)
+});
