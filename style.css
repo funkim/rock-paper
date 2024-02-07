@@ -1,26 +1,27 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+}
 div.battlefield {
     display: flex;
-    flex-direction: row;
-}
-.playerChoice {
-    display: flex;
-    flex-direction: row;
-    max-width: 250px;
+    flex-direction: column;
+    justify-content: center;
 }
 div.battlefield img {
-    max-width: 100%;
+    max-width:220px;
     height: auto;
-    
 }
-div.result {
+#CC {
     display: flex;
-    text-decoration: wavy;
-    font-weight: bolder;
-    align-items: center;
-    justify-self: center;
-}
-div.CC {
-    display:flex;
-    flex-direction: row;
-    max-width: 250px;
-}
+    justify-content: center;
+} 

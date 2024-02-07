@@ -32,6 +32,9 @@ function game(roundResult) {
 
 
 function showComputerChoice(computerChoice) {
+    while (cCSide.firstChild) {
+        cCSide.removeChild(cCSide.firstChild);
+    }
     if (computerChoice === 'Scissors') {
         cCSide.appendChild(cCScissors);
     } else if (computerChoice === 'Rock') {
