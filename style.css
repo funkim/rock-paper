@@ -1,14 +1,26 @@
-.battlefield {
+div.battlefield {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 .playerChoice {
     display: flex;
     flex-direction: row;
     max-width: 250px;
 }
-.playerChoice img {
+div.battlefield img {
     max-width: 100%;
     height: auto;
     
+}
+div.result {
+    display: flex;
+    text-decoration: wavy;
+    font-weight: bolder;
+    align-items: center;
+    justify-self: center;
+}
+div.CC {
+    display:flex;
+    flex-direction: row;
+    max-width: 250px;
 }
